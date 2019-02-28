@@ -50,7 +50,7 @@ tip3=268+bill(268);
 totarr.push(tip1);
 totarr.push(tip2);
 totarr.push(tip3);
-*/
+
 var mydetails= {
     fname:'Manasa',
     lname:'D',
@@ -70,3 +70,38 @@ console.log(mydetails.calcage(1998));
 var abc=new Object(mydetails);
 abc.fname='abc';
 console.log(abc);
+//DOM manipulation
+document.getElementById('btn').onmouseover=changeOnMouseOver();
+document.getElementById('btn').onmouseover=changeOnMouseOut();
+
+function changeOnMouseOver() {
+    var but=document.getElementById('btn');
+    but.style.background="red";
+};
+
+function changeOnMouseOut() {
+    var but=document.getElementById('btn');
+    this.style.background="blue";
+};
+
+document.getElementById('btn').onclick=function(){
+alert("You clicked the button")
+};
+*/
+var but=document.getElementById('btn');
+but.addEventListener('mouseover',changeOnMouseOver);
+but.addEventListener('mouseout',changeOnMouseOut);
+function changeOnMouseOver() {
+    this.style.background="red";
+};
+
+function changeOnMouseOut() {
+    
+    but.style.background="blue";
+};
+
+document.getElementById('btn').onclick=function(){
+alert("You clicked the button");
+};
+
+document.querySelector('#hId').textContent="New Text";
